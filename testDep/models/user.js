@@ -6,8 +6,9 @@ const user = new mongoose.Schema({
     lastname: String,
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-    score: { type: Number },
-    answers: [{ question: String, answer: String }]
+    score: { type: Number, default : 0 },
+    answers: [{ question: String, answer: String, value: String }],
+    resultat: [{ score: Number, answers: [{ question: String, answer: String }] }]
 
 })
 
